@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Peak Fitness's sign-up form. For you to fix.
+
+  It works, but it's frustrating on purpose. Fix it so people can finish it:
+  - Every field gets a real <label>, tied to it with for and id. A placeholder is not a label.
+  - Every field gets the type that fits its answer: email, tel, date, password, and radio buttons for the plan.
+  - autocomplete on the name, email, phone, birth date, ZIP code and password, and inputmode="numeric" on the ZIP code.
+  - The ZIP code's pattern gets a hint that says what to type, tied to it with aria-describedby.
+  - The password's minlength gets a hint too.
+  - Required fields say so in words in their label, such as "Full name (required)". Color alone isn't enough.
+  - No reset button: one click on it throws away everything someone typed.
+  - The page passes the validator with no errors.
+
+  Keep every name attribute as it is: received.html shows what the form sends by those names.
+  This exercise's form uses method="get" only so received.html can read the answers from the address.
+  A real sign-up form sends by POST, as in How a Form Sends Data.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join Peak Fitness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Join Peak Fitness</h1>
+    <p>Your first week is free. Sign up in two minutes and start any day you like.</p>
+  </header>
+
+  <main>
+    <form action="received.html" method="get">
+      <p>Required fields in red.</p>
+
+      <div>
+        <input type="text" name="fullName" placeholder="Full name" required>
+      </div>
+
+      <div>
+        <input type="text" name="email" placeholder="Email" required>
+      </div>
+
+      <div>
+        <input type="text" name="phone" placeholder="Phone">
+      </div>
+
+      <div>
+        <input type="text" name="birthDate" placeholder="Birth date" required>
+      </div>
+
+      <div>
+        <input type="text" name="zip" placeholder="ZIP code" pattern="[0-9]{5}">
+      </div>
+
+      <div>
+        <input type="text" name="plan" placeholder="Plan: Basic, Plus or Premium" required>
+      </div>
+
+      <div>
+        <input type="text" name="password" placeholder="Password" minlength="8" required>
+      </div>
+
+      <div>
+        <input type="checkbox" name="terms" value="agreed" required> I agree to the membership terms
+      </div>
+
+      <div>
+        <button type="reset">Clear</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>Peak Fitness is a made-up gym for this exercise. The form sends your answers only to received.html, on your own computer.</p>
+  </footer>
+</body>
+</html>

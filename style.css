@@ -1,0 +1,164 @@
+/*
+  Peak Fitness's ready-made stylesheet. Ready to use: you don't need to change this file.
+  It styles plain HTML elements, so the form looks good as soon as its HTML is right.
+  A hint is a paragraph whose id ends in -hint, such as <p id="zip-hint">.
+  If you want to write styles like these yourself, the CSS in Depth course teaches you how.
+*/
+
+:root {
+  --ink: #1f2933;
+  --muted: #52606d;
+  --brand: #0b6e4f;
+  --line: #9aa5b1;
+  --paper: #ffffff;
+  --page: #f0f4f8;
+  --alert: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page);
+}
+
+header,
+main,
+footer {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  border-bottom: 4px solid var(--brand);
+}
+
+h1 {
+  margin: 0.5rem 0;
+  color: var(--brand);
+}
+
+form {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: var(--paper);
+  border-radius: 0.5rem;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input:not([type="checkbox"], [type="radio"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--line);
+  border-radius: 0.375rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline;
+  font-weight: 400;
+}
+
+/* The starter's "required fields in red": a color, and nothing a screen reader can hear. */
+input:required {
+  border-color: var(--alert);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+fieldset {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 1rem 1rem;
+  border: 2px solid var(--line);
+  border-radius: 0.375rem;
+}
+
+p[id$="-hint"] {
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+  border: 2px solid var(--brand);
+  border-radius: 0.375rem;
+  color: var(--paper);
+  background: var(--brand);
+  cursor: pointer;
+}
+
+button[type="reset"] {
+  color: var(--brand);
+  background: var(--paper);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: var(--brand);
+}
+
+footer {
+  font-size: 1rem;
+  color: var(--muted);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+  Ready to use: you don't need to change this file.
+  It shows what the sign-up form sent, as a table. The small script at the bottom reads the
+  name=value pairs from the page's address and fills in the table. The password is never shown:
+  only how many characters it has.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What the form sent: Peak Fitness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>What the form sent</h1>
+    <p>This is what Peak Fitness's server would get from your form.</p>
+  </header>
+
+  <main>
+    <table>
+      <caption>Each field's name, and the value the form sent with it</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody id="sent">
+        <tr>
+          <td colspan="2">Nothing yet. Fill in the form and send it.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="signup.html">Back to the form</a></p>
+  </main>
+
+  <script>
+    const pairs = [...new URLSearchParams(location.search)];
+    const body = document.getElementById('sent');
+    if (pairs.length > 0) {
+      body.replaceChildren();
+      for (const [name, value] of pairs) {
+        const row = body.insertRow();
+        row.insertCell().textContent = name;
+        const shown = name === 'password' ? `(hidden: ${value.length} characters)` : value;
+        row.insertCell().textContent = value === '' ? '(empty)' : shown;
+      }
+    }
+  </script>
+</body>
+</html>
